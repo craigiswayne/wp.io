@@ -26,7 +26,7 @@
                     "tf-core.php"
                 ]
             },
-            "time": "2017-10-19T14:04:59+00:00"
+            "time": "2017-10-19 14:04:59"
         },
         {
             "name": "24dotcom/tf-popular-posts-addon",
@@ -34,7 +34,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:24dotcom/tf-popular-posts-addon.git",
-                "reference": "c3e60f7bd22e8ccd32e855fdfc3c5c8b27e35fe2"
+                "reference": "f1b9082d45f97481af7b1465c7e26c54257bc552"
             },
             "require": {
                 "composer/installers": "~1.0",
@@ -51,7 +51,7 @@
                 }
             ],
             "description": "Popular Posts as per Google Analytics",
-            "time": "2017-10-20T08:02:49+00:00"
+            "time": "2017-10-22 16:51:00"
         },
         {
             "name": "24dotcom/tf-posts-leaderboard",
@@ -225,7 +225,7 @@
             ],
             "description": "Competition theme for UGC Campaigns",
             "homepage": "https://github.com/craigiswayne/round-robin",
-            "time": "2017-06-01T09:10:47+00:00"
+            "time": "2017-06-01 09:10:47"
         },
         {
             "name": "craigiswayne/splinter",
@@ -246,7 +246,7 @@
                 }
             ],
             "description": "WordPress Base Theme",
-            "time": "2017-08-25T10:52:27+00:00"
+            "time": "2017-08-25 10:52:27"
         },
         {
             "name": "craigiswayne/wp-uikit",
@@ -275,7 +275,7 @@
                 }
             ],
             "description": "Integrate and Configure UIKIt straight from the Customizer",
-            "time": "2017-08-25T10:51:55+00:00"
+            "time": "2017-08-25 10:51:55"
         },
         {
             "name": "firebase/php-jwt",
