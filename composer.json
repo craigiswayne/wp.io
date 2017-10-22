@@ -1,0 +1,80 @@
+{
+    "name": "craigiswayne/wp.io",
+    "description": "My WordPress Playground",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Craig Wayne",
+            "email": "craigiswayne@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "repositories":[
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:craigiswayne/round-robin.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:craigiswayne/splinter.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:craigiswayne/wp-uikit.git"
+        },
+        {
+            "type": "git",
+            "url": "git@bitbucket.org:24dotcom/tf-core.git"
+        },
+        {
+            "url": "git@bitbucket.org:24dotcom/tf-posts-leaderboard.git",
+            "type": "git"
+        },
+        {
+            "url": "git@bitbucket.org:24dotcom/tf-popular-posts-addon.git",
+            "type": "git"
+        }
+    ],
+    "require":{
+        "johnpbloch/wordpress": "4.8.*",
+        "composer/installers": "~1.0",
+        "wpackagist-plugin/kirki": "*",
+        "wpackagist-plugin/timber-library": "1.3.0",
+        "wpackagist-theme/hestia": "1.1.50",
+        "wpackagist-theme/twentyseventeen": "1.3",
+        "wpackagist-plugin/carbon-fields": "1.6",
+        "craigiswayne/round-robin": "dev-master",
+        "craigiswayne/splinter": "dev-feature/uikit",
+        "craigiswayne/wp-uikit": "dev-feature/initial",
+        "24dotcom/tf-core": "dev-develop",
+        "24dotcom/tf-posts-leaderboard": "0.1.1",
+        "24dotcom/tf-popular-posts-addon": "dev-feature/initial"
+    },
+    "extra": {
+        "wordpress-install-dir": "wordpress-core",
+        "installer-paths": {
+            "wp-content/languages": ["24dotcom/tf-languages"],
+            "wp-content/plugins/tf-core/addons/tf-native": ["24dotcom/tf-native-addon"],
+            "wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+            "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "wp-content/themes/{$name}/": ["type:wordpress-theme"],
+            "wp-content/plugins/tf-core/addons/tf-campaigns": "24dotcom/tf-campaigns-addon",
+            "wp-content/plugins/tf-core/addons/tf-popular_posts": "24dotcom/tf-popular-posts-addon"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "if [ -d wordpress-core ]; then rsync -rtlpP wordpress-core/* ./ --exclude='composer.json' --exclude='vendor'; fi",
+            "if [ -d wordpress-core ]; then rm -rf wordpress-core; fi",
+            "if [ -f wp-content/plugins/hello.php ]; then rm wp-content/plugins/hello.php; fi;",
+            "if [ -d plugins ]; then rsync -rtlpP plugins/* ./wp-content/plugins/; fi",
+            "if [ -d mu-plugins ]; then rsync -rtlpP mu-plugins/* wp-content/mu-plugins/; fi",
+            "if [ -d plugins ]; then rm -rf plugins; fi",
+            "if [ -d mu-plugins ]; then rm -rf mu-plugins; fi"
+        ]
+    }
+}
