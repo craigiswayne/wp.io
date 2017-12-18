@@ -20,6 +20,10 @@
         },
         {
             "type": "git",
+            "url": "git@github.com:craigiswayne/care-bear.git"
+        },
+        {
+            "type": "git",
             "url": "git@github.com:craigiswayne/splinter.git"
         },
         {
@@ -37,6 +41,14 @@
         {
             "url": "git@bitbucket.org:24dotcom/tf-popular-posts-addon.git",
             "type": "git"
+        },
+        {
+            "url": "git@bitbucket.org:24dotcom/tf-buyers-guide-addon.git",
+            "type": "git"
+        },
+        {
+            "url": "git@bitbucket.org:24dotcom/tf-master-lean.git",
+            "type": "git"
         }
     ],
     "require":{
@@ -47,34 +59,46 @@
         "wpackagist-theme/hestia": "1.1.50",
         "wpackagist-theme/twentyseventeen": "1.3",
         "wpackagist-plugin/carbon-fields": "1.6",
+        "wpackagist-plugin/jetpack": "5.4",
         "craigiswayne/round-robin": "dev-master",
         "craigiswayne/splinter": "dev-feature/uikit",
         "craigiswayne/wp-uikit": "dev-feature/initial",
+        "craigiswayne/care-bear": "dev-master",
         "24dotcom/tf-core": "dev-develop",
         "24dotcom/tf-posts-leaderboard": "0.1.1",
-        "24dotcom/tf-popular-posts-addon": "dev-feature/initial"
+        "24dotcom/tf-popular-posts-addon": "dev-develop",
+        "24dotcom/tf-buyers-guide-addon": "dev-develop",
+        "24dotcom/tf-master-lean": "dev-develop",
+        "syamilmj/aqua-resizer": "^1.2"
     },
     "extra": {
         "wordpress-install-dir": "wordpress-core",
         "installer-paths": {
+            "wp-content/plugins/tf-core/addons/tf-buyers_guide": ["24dotcom/tf-buyers-guide-addon"],
             "wp-content/languages": ["24dotcom/tf-languages"],
-            "wp-content/plugins/tf-core/addons/tf-native": ["24dotcom/tf-native-addon"],
             "wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
             "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
             "wp-content/themes/{$name}/": ["type:wordpress-theme"],
-            "wp-content/plugins/tf-core/addons/tf-campaigns": "24dotcom/tf-campaigns-addon",
-            "wp-content/plugins/tf-core/addons/tf-popular_posts": "24dotcom/tf-popular-posts-addon"
+            "wp-content/plugins/tf-core/addons/tf-native": ["24dotcom/tf-native-addon"],
+            "wp-content/plugins/tf-core/addons/tf-campaigns": ["24dotcom/tf-campaigns-addon"],
+            "wp-content/plugins/tf-core/addons/tf-popular_posts": ["24dotcom/tf-popular-posts-addon"]
         }
     },
     "scripts": {
-        "post-install-cmd": [
-            "if [ -d wordpress-core ]; then rsync -rtlpP wordpress-core/* ./ --exclude='composer.json' --exclude='vendor'; fi",
-            "if [ -d wordpress-core ]; then rm -rf wordpress-core; fi",
-            "if [ -f wp-content/plugins/hello.php ]; then rm wp-content/plugins/hello.php; fi;",
-            "if [ -d plugins ]; then rsync -rtlpP plugins/* ./wp-content/plugins/; fi",
-            "if [ -d mu-plugins ]; then rsync -rtlpP mu-plugins/* wp-content/mu-plugins/; fi",
-            "if [ -d plugins ]; then rm -rf plugins; fi",
-            "if [ -d mu-plugins ]; then rm -rf mu-plugins; fi"
-        ]
+   "post-install-cmd": [
+     "if [ -d wordpress-core ]; then rsync -rtlpP wordpress-core/* ./ --exclude='composer.json' --exclude='vendor'; fi",
+     "if [ -d wordpress-core ]; then rm -rf wordpress-core; fi",
+     "rm -rf wp-content/themes/twenty*",
+     "rm wp-content/plugins/hello.php",
+     "if [ -d plugins ]; then rsync -rtlpP plugins/* ./wp-content/plugins/; fi",
+     "if [ -d mu-plugins ]; then rsync -rtlpP mu-plugins/* wp-content/mu-plugins/; fi",
+     "if [ -f patches/14459.imagick.patch ]; then patch -p3 -b --verbose wp-includes/class-wp-image-editor-imagick.php < patches/14459.imagick.patch; fi",
+     "if [ -f patches/14459.imagick.2.patch ]; then patch -p3 -b --verbose wp-includes/class-wp-image-editor-imagick.php < patches/14459.imagick.2.patch; fi",
+     "if [ -d plugins ]; then rm -rf plugins; fi",
+     "if [ -d mu-plugins ]; then rm -rf mu-plugins; fi"
+   ]
+ },
+    "platform": {
+        "php": "7.*"
     }
 }

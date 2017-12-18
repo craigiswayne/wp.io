@@ -4,18 +4,46 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe9076e8579d11f56a7e64f730f9c5f6",
+    "content-hash": "349d5f295f599febe3ba602c1d4d78e5",
     "packages": [
+        {
+            "name": "24dotcom/tf-buyers-guide-addon",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:24dotcom/tf-buyers-guide-addon.git",
+                "reference": "c192a1dd2104e5ade6c979a3e8684016c65b1b31"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "UNLICENSED"
+            ],
+            "authors": [
+                {
+                    "name": "24.com",
+                    "email": "24.COMOpenSourceDevTeam@ds.naspers.com"
+                }
+            ],
+            "description": "Manage Buyers Guides for your Post Types",
+            "time": "2017-11-14 09:54:15"
+        },
         {
             "name": "24dotcom/tf-core",
             "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:24dotcom/tf-core.git",
-                "reference": "98c3dc8332b4b0fbc2aafecb9382daae542b0336"
+                "reference": "bd4c861b8885d88baf750b3fd1c14f300de72291"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "^1.2",
+                "htmlburger/carbon-fields": "1.6",
+                "mobiledetect/mobiledetectlib": "^2.8.26",
+                "stil/gif-endec": "0.2.0",
+                "syamilmj/aqua-resizer": "^1.2.0"
             },
             "type": "wordpress-plugin",
             "autoload": {
@@ -26,15 +54,46 @@
                     "tf-core.php"
                 ]
             },
-            "time": "2017-10-19 14:04:59"
+            "time": "2017-11-24 13:00:29"
+        },
+        {
+            "name": "24dotcom/tf-master-lean",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:24dotcom/tf-master-lean.git",
+                "reference": "b6ed2b9260c9b874b753d1b471e13229ce80025c"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "require-dev": {
+                "10up/wp_mock": "dev-master",
+                "antecedent/patchwork": "1.2.*",
+                "brianium/paratest": "dev-master",
+                "phpunit/phpunit": "*@stable"
+            },
+            "type": "wordpress-theme",
+            "license": [
+                "UNLICENSED"
+            ],
+            "authors": [
+                {
+                    "name": "24.Com Open Source Dev Team",
+                    "email": "24.COMOpenSourceDevTeam@ds.naspers.com"
+                }
+            ],
+            "description": "A parent theme to provide a foundational base for OpenSource development",
+            "homepage": "https://bitbucket.org/24dotcom/tf-master",
+            "time": "2017-11-21 15:13:37"
         },
         {
             "name": "24dotcom/tf-popular-posts-addon",
-            "version": "dev-feature/initial",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:24dotcom/tf-popular-posts-addon.git",
-                "reference": "f1b9082d45f97481af7b1465c7e26c54257bc552"
+                "reference": "23fc0223985a914b882d17619a5c8ea9293f57d1"
             },
             "require": {
                 "composer/installers": "~1.0",
@@ -51,7 +110,7 @@
                 }
             ],
             "description": "Popular Posts as per Google Analytics",
-            "time": "2017-10-22 16:51:00"
+            "time": "2017-11-16 11:38:36"
         },
         {
             "name": "24dotcom/tf-posts-leaderboard",
@@ -203,12 +262,33 @@
             "time": "2017-08-09T07:53:48+00:00"
         },
         {
+            "name": "craigiswayne/care-bear",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:craigiswayne/care-bear.git",
+                "reference": "a986e7689f75b7e50859c2d718bb0fe903bc82c7"
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Craig Wayne",
+                    "email": "craigiswayne@gmail.com"
+                }
+            ],
+            "description": "A few helpers for the debug mode",
+            "time": "2017-11-03 16:08:53"
+        },
+        {
             "name": "craigiswayne/round-robin",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:craigiswayne/round-robin.git",
-                "reference": "5043fa7f97afbe9b0d1484b1a3720fe4ee088d2f"
+                "reference": "1e5157b33cd173d55975efd07e20a4cdb9503831"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -225,7 +305,7 @@
             ],
             "description": "Competition theme for UGC Campaigns",
             "homepage": "https://github.com/craigiswayne/round-robin",
-            "time": "2017-06-01 09:10:47"
+            "time": "2017-10-31 06:32:59"
         },
         {
             "name": "craigiswayne/splinter",
@@ -325,16 +405,16 @@
         },
         {
             "name": "google/apiclient",
-            "version": "v2.2.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client.git",
-                "reference": "f3fadd538315d62ebd1191d89ac791468c617260"
+                "reference": "b69b8ac4bf6501793c389d4e013a79d09c85c5f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/f3fadd538315d62ebd1191d89ac791468c617260",
-                "reference": "f3fadd538315d62ebd1191d89ac791468c617260",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/b69b8ac4bf6501793c389d4e013a79d09c85c5f2",
+                "reference": "b69b8ac4bf6501793c389d4e013a79d09c85c5f2",
                 "shasum": ""
             },
             "require": {
@@ -380,20 +460,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2017-07-10T15:34:54+00:00"
+            "time": "2017-11-03T01:19:53+00:00"
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.30",
+            "version": "v0.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client-services.git",
-                "reference": "a7d43aa8748d74e7a8fd1617e4ec9e7af4974bec"
+                "reference": "2fd7d2876fbc0174faddba3241956a1393536159"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/a7d43aa8748d74e7a8fd1617e4ec9e7af4974bec",
-                "reference": "a7d43aa8748d74e7a8fd1617e4ec9e7af4974bec",
+                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/2fd7d2876fbc0174faddba3241956a1393536159",
+                "reference": "2fd7d2876fbc0174faddba3241956a1393536159",
                 "shasum": ""
             },
             "require": {
@@ -417,7 +497,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2017-10-14T00:23:32+00:00"
+            "time": "2017-11-25T00:23:12+00:00"
         },
         {
             "name": "google/auth",
@@ -646,21 +726,133 @@
             "time": "2017-03-20T17:10:46+00:00"
         },
         {
-            "name": "johnpbloch/wordpress",
-            "version": "4.8.2",
+            "name": "htmlburger/carbon-fields",
+            "version": "v1.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "d500aae1793990e4874cf794b6cf88ce60a38918"
+                "url": "https://github.com/htmlburger/carbon-fields.git",
+                "reference": "03b28ded9b3eb44347091935185ab8fbb844d2f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/d500aae1793990e4874cf794b6cf88ce60a38918",
-                "reference": "d500aae1793990e4874cf794b6cf88ce60a38918",
+                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/03b28ded9b3eb44347091935185ab8fbb844d2f4",
+                "reference": "03b28ded9b3eb44347091935185ab8fbb844d2f4",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "4.8.2",
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Carbon_Fields\\": "core/"
+                },
+                "files": [
+                    "carbon-fields.php",
+                    "core/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "htmlBurger",
+                    "email": "wordpress@htmlburger.com",
+                    "homepage": "https://htmlburger.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Marin Atanasov",
+                    "email": "contact@marinatanasov.com",
+                    "homepage": "http://marinatanasov.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Siyan Panayotov",
+                    "homepage": "http://siyanpanayotov.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Georgi Stoyanov",
+                    "email": "stoyanov.gs@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Stanimir Panchev",
+                    "email": "Stan4omir@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Peter Petrov",
+                    "email": "peter.petrov89@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Plamen Kostadinov",
+                    "email": "pkostadinov.2create@gmail.com",
+                    "homepage": "http://plasmen.info/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Stanimir Stoyanov",
+                    "email": "stanimir.k.stoyanov@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Georgi Popov",
+                    "homepage": "http://magadanski.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "German Velchev",
+                    "email": "germozy@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Rashko Petrov",
+                    "email": "brutalenemy666@gmail.com",
+                    "homepage": "http://errorfactory.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Miroslav Mitev",
+                    "email": "mmitev.2create@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Kaloyan Ivanov",
+                    "email": "kaloyanxivanov@gmail.com",
+                    "homepage": "http://vilepixels.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Atanas Angelov",
+                    "email": "atanas.angelov.dev@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "WordPress developer-friendly custom fields for post types, taxonomy terms, users, comments, widgets, options and more.",
+            "homepage": "http://carbonfields.net/",
+            "time": "2017-05-23T08:19:29+00:00"
+        },
+        {
+            "name": "johnpbloch/wordpress",
+            "version": "4.8.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpbloch/wordpress.git",
+                "reference": "d5bc0df53dd6e6e43082f47ccee89aab2049bc23"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/d5bc0df53dd6e6e43082f47ccee89aab2049bc23",
+                "reference": "d5bc0df53dd6e6e43082f47ccee89aab2049bc23",
+                "shasum": ""
+            },
+            "require": {
+                "johnpbloch/wordpress-core": "4.8.3",
                 "johnpbloch/wordpress-core-installer": "^1.0",
                 "php": ">=5.3.2"
             },
@@ -682,27 +874,27 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-09-19T22:27:16+00:00"
+            "time": "2017-10-31T16:40:07+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "4.8.2",
+            "version": "4.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "706faa0d7b6b57a25d4acd18331dd71dfa6b01cf"
+                "reference": "949e279f9752b458d70288636a77d2b8f66801f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/706faa0d7b6b57a25d4acd18331dd71dfa6b01cf",
-                "reference": "706faa0d7b6b57a25d4acd18331dd71dfa6b01cf",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/949e279f9752b458d70288636a77d2b8f66801f6",
+                "reference": "949e279f9752b458d70288636a77d2b8f66801f6",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "provide": {
-                "wordpress/core-implementation": "4.8.2"
+                "wordpress/core-implementation": "4.8.3"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -722,7 +914,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-09-19T22:27:11+00:00"
+            "time": "2017-10-31T16:39:59+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -827,6 +1019,58 @@
             "time": "2017-02-23T05:07:33+00:00"
         },
         {
+            "name": "mobiledetect/mobiledetectlib",
+            "version": "2.8.26",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/serbanghita/Mobile-Detect.git",
+                "reference": "a0ed86c9d7c04ae27fa6418b55e3beb04dfe3297"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/a0ed86c9d7c04ae27fa6418b55e3beb04dfe3297",
+                "reference": "a0ed86c9d7c04ae27fa6418b55e3beb04dfe3297",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Mobile_Detect.php"
+                ],
+                "psr-0": {
+                    "Detection": "namespaced/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Serban Ghita",
+                    "email": "serbanghita@gmail.com",
+                    "homepage": "http://mobiledetect.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+            "homepage": "https://github.com/serbanghita/Mobile-Detect",
+            "keywords": [
+                "detect mobile devices",
+                "mobile",
+                "mobile detect",
+                "mobile detector",
+                "php mobile detect"
+            ],
+            "time": "2017-08-29T18:23:54+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.23.0",
             "source": {
@@ -906,16 +1150,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "34a7699e6f31b1ef4035ee36444407cecf9f56aa"
+                "reference": "f4b6a522dfa1fd1e477c9cfe5909d5b31f098c0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/34a7699e6f31b1ef4035ee36444407cecf9f56aa",
-                "reference": "34a7699e6f31b1ef4035ee36444407cecf9f56aa",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/f4b6a522dfa1fd1e477c9cfe5909d5b31f098c0b",
+                "reference": "f4b6a522dfa1fd1e477c9cfe5909d5b31f098c0b",
                 "shasum": ""
             },
             "require": {
@@ -994,7 +1238,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2017-06-05T06:31:10+00:00"
+            "time": "2017-10-23T05:04:54+00:00"
         },
         {
             "name": "psr/cache",
@@ -1140,6 +1384,92 @@
             "time": "2016-10-10T12:19:37+00:00"
         },
         {
+            "name": "stil/gif-endec",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stil/gif-endec.git",
+                "reference": "3a5792cda56884a409d69ee23a3cf462420394cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stil/gif-endec/zipball/3a5792cda56884a409d69ee23a3cf462420394cf",
+                "reference": "3a5792cda56884a409d69ee23a3cf462420394cf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GIFEndec\\": "src/",
+                    "GIFEndec\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP GIF decoder and decoder with callback functions.",
+            "keywords": [
+                "animated",
+                "duration",
+                "frame",
+                "gif",
+                "php"
+            ],
+            "time": "2016-10-14T23:11:31+00:00"
+        },
+        {
+            "name": "syamilmj/aqua-resizer",
+            "version": "1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adammacias/Aqua-Resizer.git",
+                "reference": "d3e1b1e4cfeeda696630d9103260b52fb9a361ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adammacias/Aqua-Resizer/zipball/d3e1b1e4cfeeda696630d9103260b52fb9a361ab",
+                "reference": "d3e1b1e4cfeeda696630d9103260b52fb9a361ab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "aq_resizer.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "WTFPL"
+            ],
+            "authors": [
+                {
+                    "name": "Syamil MJ",
+                    "homepage": "http://aquagraphite.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This small script will allow you to resize & crop WordPress images uploaded via the media uploader on the fly.",
+            "homepage": "https://github.com/syamilmj/Aqua-Resizer",
+            "keywords": [
+                "assets",
+                "image",
+                "optimization",
+                "resize",
+                "wordpress"
+            ],
+            "time": "2017-03-24T16:17:12+00:00"
+        },
+        {
             "name": "wpackagist-plugin/carbon-fields",
             "version": "1.6.0",
             "source": {
@@ -1150,7 +1480,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/carbon-fields.zip?timestamp=1501078441",
-                "reference": null,
+                "reference": "trunk",
                 "shasum": null
             },
             "require": {
@@ -1160,17 +1490,37 @@
             "homepage": "https://wordpress.org/plugins/carbon-fields/"
         },
         {
-            "name": "wpackagist-plugin/kirki",
-            "version": "3.0.11",
+            "name": "wpackagist-plugin/jetpack",
+            "version": "5.4",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/kirki/",
-                "reference": "tags/3.0.11"
+                "url": "https://plugins.svn.wordpress.org/jetpack/",
+                "reference": "tags/5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/kirki.3.0.11.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/jetpack.5.4.zip",
+                "reference": "tags/5.4",
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/jetpack/"
+        },
+        {
+            "name": "wpackagist-plugin/kirki",
+            "version": "3.0.16",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/kirki/",
+                "reference": "tags/3.0.16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/kirki.3.0.16.zip",
+                "reference": "tags/3.0.16",
                 "shasum": null
             },
             "require": {
@@ -1190,7 +1540,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/timber-library.1.3.0.zip",
-                "reference": null,
+                "reference": "tags/1.3.0",
                 "shasum": null
             },
             "require": {
@@ -1210,7 +1560,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/theme/hestia.1.1.50.zip",
-                "reference": null,
+                "reference": "1.1.50",
                 "shasum": null
             },
             "require": {
@@ -1230,7 +1580,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/theme/twentyseventeen.1.3.zip",
-                "reference": null,
+                "reference": "1.3",
                 "shasum": null
             },
             "require": {
@@ -1247,8 +1597,11 @@
         "craigiswayne/round-robin": 20,
         "craigiswayne/splinter": 20,
         "craigiswayne/wp-uikit": 20,
+        "craigiswayne/care-bear": 20,
         "24dotcom/tf-core": 20,
-        "24dotcom/tf-popular-posts-addon": 20
+        "24dotcom/tf-popular-posts-addon": 20,
+        "24dotcom/tf-buyers-guide-addon": 20,
+        "24dotcom/tf-master-lean": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
