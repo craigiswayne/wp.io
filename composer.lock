@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d440ae63796b0d98534631f06552a3c",
+    "content-hash": "50cf150c03c02034b2d112fa1e9c19f3",
     "packages": [
         {
             "name": "composer/installers",
@@ -145,22 +145,22 @@
         },
         {
             "name": "craigiswayne/wp-shanela",
-            "version": "v0.0.5",
+            "version": "v0.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craigiswayne/wp-shanela.git",
-                "reference": "c6a3b681509d68540f727d84c662c522fa326a55"
+                "reference": "ea9382a56331c54215f80aff8dbce7bc49c9e97e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craigiswayne/wp-shanela/zipball/c6a3b681509d68540f727d84c662c522fa326a55",
-                "reference": "c6a3b681509d68540f727d84c662c522fa326a55",
+                "url": "https://api.github.com/repos/craigiswayne/wp-shanela/zipball/ea9382a56331c54215f80aff8dbce7bc49c9e97e",
+                "reference": "ea9382a56331c54215f80aff8dbce7bc49c9e97e",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0",
                 "composer/installers": "^1.5",
-                "johnpbloch/wordpress": "^4",
+                "johnpbloch/wordpress": ">=4",
                 "php": ">=5.4"
             },
             "type": "composer-plugin",
@@ -187,24 +187,25 @@
                 "composer",
                 "wordpress"
             ],
-            "time": "2018-09-14T10:40:07+00:00"
+            "abandoned": true,
+            "time": "2020-10-12T07:31:33+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.9.15",
+            "version": "5.5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "da74b696e8faaff32960dcac1c0d9f55e48cf960"
+                "reference": "57cbe48c270c22dda429ef21fc15c6249024a340"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/da74b696e8faaff32960dcac1c0d9f55e48cf960",
-                "reference": "da74b696e8faaff32960dcac1c0d9f55e48cf960",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/57cbe48c270c22dda429ef21fc15c6249024a340",
+                "reference": "57cbe48c270c22dda429ef21fc15c6249024a340",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "4.9.15",
+                "johnpbloch/wordpress-core": "5.5.x-dev",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=5.6.20"
             },
@@ -226,27 +227,28 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-06-10T22:04:53+00:00"
+            "time": "2020-07-28T21:06:29+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "4.9.15",
+            "version": "5.5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "df9a66e96fc1eaefc1e76b6cdb5d6e3bbeb015e9"
+                "reference": "ff9354e749b9e9b7cc2535cc90a92a1ec4ee19ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/df9a66e96fc1eaefc1e76b6cdb5d6e3bbeb015e9",
-                "reference": "df9a66e96fc1eaefc1e76b6cdb5d6e3bbeb015e9",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/ff9354e749b9e9b7cc2535cc90a92a1ec4ee19ee",
+                "reference": "ff9354e749b9e9b7cc2535cc90a92a1ec4ee19ee",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "ext-json": "*",
+                "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "4.9.15"
+                "wordpress/core-implementation": "5.5.x-dev"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -266,7 +268,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-06-10T22:04:49+00:00"
+            "time": "2020-09-08T23:07:17+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -317,123 +319,12 @@
                 "wordpress"
             ],
             "time": "2020-04-16T21:44:57+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/jetpack",
-            "version": "5.9.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/5.9.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.5.9.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/jetpack/"
-        },
-        {
-            "name": "wpackagist-plugin/kirki",
-            "version": "3.1.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/kirki/",
-                "reference": "tags/3.1.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/kirki.3.1.5.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/kirki/"
-        },
-        {
-            "name": "wpackagist-plugin/timber-library",
-            "version": "1.18.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/timber-library/",
-                "reference": "tags/1.18.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/timber-library.1.18.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/timber-library/"
-        },
-        {
-            "name": "wpackagist-plugin/wordpress-importer",
-            "version": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordpress-importer/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.zip?timestamp=1600884758"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-importer/",
-            "time": "2020-09-23T18:12:38+00:00"
-        },
-        {
-            "name": "wpackagist-theme/hestia",
-            "version": "1.1.86",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/hestia/",
-                "reference": "1.1.86"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/hestia.1.1.86.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/hestia/"
-        },
-        {
-            "name": "wpackagist-theme/twentyseventeen",
-            "version": "1.9",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentyseventeen/",
-                "reference": "1.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyseventeen.1.9.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentyseventeen/"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "beta",
-    "stability-flags": {
-        "wpackagist-plugin/wordpress-importer": 20
-    },
+    "minimum-stability": "dev",
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
