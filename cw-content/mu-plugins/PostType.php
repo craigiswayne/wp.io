@@ -1,40 +1,45 @@
 <?php
 namespace craigiswayne\wordpress;
 
+class PostTypeArgs {
+	public static $menu_icon = 'dashicons-book-alt';
+	public static $taxonomies = ['category'];
+}
+
 class PostType {
 	
-	public static $definition_file = "f2_post_types.json";
+	public static $definition_file = 'cw_post_types.json';
 	private static $registered_callback = false;
 	private static $_pending = [];
 	
 	public static function init(){
+		self::import();
+	}
+	
+	private static function import(){
 		$definition_file_path = WP_CONTENT_DIR.DIRECTORY_SEPARATOR.self::$definition_file;
-		if(file_exists($definition_file_path)){
-			
-			$definition_file = file_get_contents($definition_file_path);
-			
-			$jsonIterator = new \RecursiveIteratorIterator(
-				new \RecursiveArrayIterator(json_decode($definition_file, TRUE)),
-				\RecursiveIteratorIterator::SELF_FIRST);
-			
-			foreach ($jsonIterator as $singular_name => $options) {
-				if(!is_array($options)) {
-					continue;
-				}
-				self::create($singular_name);
-			}
+		if(!file_exists($definition_file_path)){
+			return;
+		}
+		
+		$definition_file = file_get_contents($definition_file_path);
+		
+		$json = json_decode($definition_file);
+		foreach( $json as $singular_name => $args ){
+			$args = $args ?? new \stdClass();
+			self::create($singular_name, $args);
 		}
 	}
 	
 	/**
 	 * @param string $singularName Should be in normal case, i.e. no dashes, not lowercase. This factory will apply the necessary filters where applicable
-	 * @param array $options
+	 * @param \stdClass $args
 	 */
-	public static function create(string $singularName, array $options = []) {
+	public static function create(string $singularName, \stdClass $args = null) {
 		$slug = sanitize_title($singularName);
-		$plural = $options->plural ?? $singularName.'s';
+		$plural = $args->plural ?? $singularName.'s';
 		
-		$args = array(
+		$registerArgs = array(
 			'labels'        => array(
 				'name'               => __( $plural, $slug ),
 				'singular_name'      => __( $singularName, $slug ),
@@ -51,7 +56,10 @@ class PostType {
 				'all_items'          => __( "All $plural", $slug ),
 				'archive_title'      => __( $plural, $slug ),
 			),
-			'menu_icon'     => 'dashicons-book-alt',
+			/**
+			 * @see: https://developer.wordpress.org/resource/dashicons/#building
+			 */
+			'menu_icon'     => $args->menu_icon ?? PostTypeArgs::$menu_icon,
 //			'menu_position' => 6,
 			'public'        => true,
 			'has_archive'   => true,
@@ -59,10 +67,12 @@ class PostType {
 			'supports'      => array( 'title', 'thumbnail', 'excerpt', 'revisions' ),
 			'rewrite'       => array( 'slug' => $slug ),
 			'show_in_rest'  => true,
-			'rest_base'     => $slug,
-			'taxonomies'    => array( 'category' )
+			/**
+			 * @example ['category']
+			 */
+			'taxonomies'    => $args->taxonomies ?? PostTypeArgs::$taxonomies
 		);
-		self::$_pending[$slug] = $args;
+		self::$_pending[$slug] = $registerArgs;
 		self::register_callback();
 	}
 	
