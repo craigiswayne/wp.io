@@ -3,4 +3,4 @@
 !composer.lock
 !bin/cleanup.sh
 !bin/php-lint.sh
-!cw-content/mu-plugins/PostType.php
+!wp-content/mu-plugins/PostType.php
