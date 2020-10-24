@@ -27,6 +27,10 @@ class PostType {
 		$json = json_decode($definition_file);
 		foreach( $json as $singular_name => $args ){
 			$args = $args ?? new \stdClass();
+			if(isset($args->enabled) && $args->enabled === false){
+				self::disable($singular_name);
+				continue;
+			}
 			self::create($singular_name, $args);
 		}
 	}
@@ -76,6 +80,10 @@ class PostType {
 		self::register_callback();
 	}
 	
+	private static function disable($post_type){
+		// TODO
+	}
+
 	/**
 	 * Registers the WordPress hook
 	 */
