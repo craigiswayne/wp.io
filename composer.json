@@ -21,8 +21,7 @@
     "craigiswayne/wp-shanela": "0.0.6",
     "johnpbloch/wordpress": "^5.5.1",
     "wpackagist-plugin/akismet":"^4.1",
-    "wpackagist-plugin/wordfence": "^7.4",
-    "htmlburger/carbon-fields": "^3.1"
+    "wpackagist-plugin/wordfence": "^7.4"
   },
   "extra": {
     "installer-paths": {
