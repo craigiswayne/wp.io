@@ -1,0 +1,20 @@
+{
+  "Hotel": {
+    "menu_icon": "dashicons-building"
+  },
+  "Department": {
+    "menu_icon": "dashicons-networking"
+  },
+  "Questionnaire": {
+    "menu_icon": "dashicons-format-chat"
+  },
+  "Staff Member": {
+  },
+  "Voucher": {
+    "menu_icon": "dashicons-tickets-alt"
+  },
+  "Report": {
+    "menu_icon": "dashicons-analytics",
+    "taxonomies": []
+  }
+}

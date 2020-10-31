@@ -10,11 +10,9 @@ wp-blog-header.php
 wp-comments-post.php
 wp-config-sample.php
 wp-config.php
-wp-content/cw_post_types.json
 wp-content/debug.log
 wp-content/index.php
 wp-content/plugins/
-wp-content/themes/
 wp-content/uploads/
 wp-content/wflogs/
 wp-cron.php
