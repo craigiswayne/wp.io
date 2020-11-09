@@ -1,14 +1,18 @@
 {
   "Hotel": {
-    "menu_icon": "dashicons-building"
+    "menu_icon": "dashicons-building",
+    "supports": ["title"]
   },
   "Department": {
-    "menu_icon": "dashicons-networking"
+    "menu_icon": "dashicons-networking",
+    "supports": ["title"]
   },
   "Questionnaire": {
     "menu_icon": "dashicons-format-chat"
   },
   "Staff Member": {
+    "menu_icon": "dashicons-businessperson",
+    "supports": ["title"]
   },
   "Voucher": {
     "menu_icon": "dashicons-tickets-alt"

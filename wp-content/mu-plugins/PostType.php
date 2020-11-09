@@ -4,6 +4,8 @@ namespace craigiswayne\wordpress;
 class PostTypeArgs {
 	public static $menu_icon = 'dashicons-book-alt';
 	public static $taxonomies = ['category'];
+	public static $public = true;
+	public static $supports = ['title', 'thumbnail', 'excerpt', 'revisions', 'custom-fields'];
 }
 
 class PostType {
@@ -25,6 +27,11 @@ class PostType {
 		$definition_file = file_get_contents($definition_file_path);
 		
 		$json = json_decode($definition_file);
+
+		if($json === null){
+			return wp_die('PostType Importer Error: Invalid Syntax');
+		}
+
 		foreach( $json as $singular_name => $args ){
 			$args = $args ?? new \stdClass();
 			if(isset($args->enabled) && $args->enabled === false){
@@ -50,7 +57,7 @@ class PostType {
 				'menu_name'          => __( $plural, $slug ),
 				'name_admin_bar'     => __( $plural, $slug ),
 				'add_new'            => __( 'Add New', $slug ),
-				'add_new_item'       => __( "Add New $plural", $slug ),
+				'add_new_item'       => __( "Add New $singularName", $slug ),
 				'edit_item'          => __( "Edit $singularName", $slug ),
 				'new_item'           => __( "New $singularName", $slug ),
 				'view_item'          => __( "View $singularName", $slug ),
@@ -65,10 +72,10 @@ class PostType {
 			 */
 			'menu_icon'     => $args->menu_icon ?? PostTypeArgs::$menu_icon,
 //			'menu_position' => 6,
-			'public'        => true,
+			'public'        => $args->public ?? PostTypeArgs::$public,
 			'has_archive'   => true,
 			'hierarchical'  => false,
-			'supports'      => array( 'title', 'thumbnail', 'excerpt', 'revisions' ),
+			'supports'      => $args->supports ?? PostTypeArgs::$supports,
 			'rewrite'       => array( 'slug' => $slug ),
 			'show_in_rest'  => true,
 			/**

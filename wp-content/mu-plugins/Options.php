@@ -17,7 +17,7 @@ if(crb_exists()){
 		Container::make( 'theme_options', __('SmartStaff') )
 			//	         ->where( 'theme_options', '=', 'page' ) //TODO might need this
 			     ->add_tab( __('General'), array(
-				Field::make( 'text', 'ss_general_default_country_prefix', 'Default Country Prefix' )->set_default_value('START')
+				Field::make( 'text', 'ss_general_default_country_prefix', 'Default Country Prefix' )->set_default_value('+27')
 			) )
 		         ->add_tab( __('Questionnaire'), array(
 			         Field::make( 'text', 'ss_questionnaire_command_to_start', 'Command to Start' ),
