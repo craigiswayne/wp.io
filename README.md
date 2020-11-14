@@ -15,6 +15,21 @@ DashIcons::analytics;
 
 ---
 
+## Taxonomy Factory / Helper
+
+###### Option 1. Via file import
+1. create a file named `cw_taxonomies.json` and place it in the `wp-content` folder
+2. here is an example of the contents
+
+```
+{
+  "department": {
+  }
+}
+```
+
+----
+
 ## PostType Helper
 
 ###### Option 1. Via file import

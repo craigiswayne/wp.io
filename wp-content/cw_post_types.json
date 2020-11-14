@@ -1,7 +1,10 @@
 {
   "Hotel": {
     "menu_icon": "dashicons-building",
-    "supports": ["title"]
+    "supports": ["title"],
+    "taxonomies": [
+      "department"
+    ]
   },
   "Department": {
     "menu_icon": "dashicons-networking",
