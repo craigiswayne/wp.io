@@ -1,5 +1,8 @@
 {
   "department": {
-    "post_types": ["hotel","staff-member","questionnaire"]
+    "post_types": ["hotel","staff-member","questionnaire"],
+    "labels": {
+
+    }
   }
 }

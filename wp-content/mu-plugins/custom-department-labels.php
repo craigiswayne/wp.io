@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Adds the proper label to the Department Taxonomy View Listing
+ */
 add_filter( "taxonomy_labels_department", function($labels){
 	if(!isset($_REQUEST['post_type'])){
 		return $labels;
@@ -17,3 +19,10 @@ add_filter( "taxonomy_labels_department", function($labels){
 	return $labels;
 }, 10, 1 );
 
+
+function edit_admin_menus() {
+	global $menu;
+	
+	$craig = 'smishmorshin';
+}
+add_action( 'admin_menu', 'edit_admin_menus' );
