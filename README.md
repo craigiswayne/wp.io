@@ -65,3 +65,15 @@ $my_new_page->options->add('option-name')->type = 'radio'
 ```
 
 ---
+
+# TODO:
+1. Update the PHP docker image so that i can use
+`
+"require": {
+    "ext-imagick": "*",
+}`
+
+2. PostType and Taxonomy class should extend the ConfigImporter class and a callback should be identified so that it can perform the following common functionality
+2.1 Look for the file on bootup
+2.2 if the file does not exist, bail and log an info message to the logs
+2.3. if the file exists and a callback exists, do the callback... maybe the callback should be the same name... so that it can be overridden by extended classes

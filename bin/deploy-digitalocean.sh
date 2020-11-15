@@ -2,6 +2,10 @@ DROPLET_USERNAME="root";
 DROPLET_IP="157.245.252.193";
 DROPLET_WWW_ROOT="/var/www/html";
 
+#echo "Clearing out plugins, themes, mu-plugins";
+#ssh -t $DROPLET_USERNAME@$DROPLET_IP "rm -r $DROPLET_WWW_ROOT/wp-content/plugins/ $DROPLET_WWW_ROOT/wp-content/mu-plugins/ $DROPLET_WWW_ROOT/wp-content/themes/";
+#echo "";
+
 echo "Copying Composer vendor directory...";
 rsync -aruv ./vendor/ $DROPLET_USERNAME@$DROPLET_IP:$DROPLET_WWW_ROOT/vendor/
 echo "";

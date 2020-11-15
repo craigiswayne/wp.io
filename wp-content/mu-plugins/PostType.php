@@ -1,8 +1,13 @@
 <?php
 namespace craigiswayne\wordpress;
 
+class MenuPosition {
+	public static $media_menu_position = 10;
+}
+
 class PostTypeArgs {
 	public static $menu_icon = 'dashicons-book-alt';
+	public static $menu_position = 11; //TODO: use a static reference here
 	public static $taxonomies = ['category'];
 	public static $public = true;
 	public static $supports = ['title', 'thumbnail', 'excerpt', 'revisions', 'custom-fields'];
@@ -14,13 +19,14 @@ class PostType {
 	private static $registered_callback = false;
 	private static $_pending = [];
 	
-	public static function init(){
+	public static function boot(){
 		self::import();
 	}
 	
 	private static function import(){
 		$definition_file_path = WP_CONTENT_DIR.DIRECTORY_SEPARATOR.self::$definition_file;
 		if(!file_exists($definition_file_path)){
+			error_log(self::class.': no config file found... skipping importing', 0);
 			return;
 		}
 		
@@ -29,7 +35,7 @@ class PostType {
 		$json = json_decode($definition_file);
 
 		if($json === null){
-			return wp_die('PostType Importer Error: Invalid Syntax');
+			return wp_die(self::class.' Importer Error: Invalid Syntax');
 		}
 
 		foreach( $json as $singular_name => $args ){
@@ -71,7 +77,7 @@ class PostType {
 			 * @see: https://developer.wordpress.org/resource/dashicons/#building
 			 */
 			'menu_icon'     => $args->menu_icon ?? PostTypeArgs::$menu_icon,
-//			'menu_position' => 6,
+			'menu_position' => $args->menu_position ?? PostTypeArgs::$menu_position,
 			'public'        => $args->public ?? PostTypeArgs::$public,
 			'has_archive'   => true,
 			'hierarchical'  => false,
@@ -115,4 +121,4 @@ class PostType {
 	}
 }
 
-PostType::init();
+PostType::boot();

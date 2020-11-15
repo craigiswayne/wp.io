@@ -1,21 +1,21 @@
 {
-  "Hotel": {
-    "menu_icon": "dashicons-building",
-    "supports": ["title"],
-    "taxonomies": [
-      "department"
-    ]
-  },
-  "Department": {
-    "menu_icon": "dashicons-networking",
-    "supports": ["title"]
-  },
   "Questionnaire": {
-    "menu_icon": "dashicons-format-chat"
+    "menu_icon": "dashicons-format-chat",
+    "menu_position": 7,
+    "supports": ["title"],
+    "taxonomies": ["category","department"]
   },
   "Staff Member": {
     "menu_icon": "dashicons-businessperson",
-    "supports": ["title"]
+    "menu_position": 8,
+    "supports": ["title"],
+    "taxonomies": ["category","department"]
+  },
+  "Hotel": {
+    "menu_icon": "dashicons-building",
+    "menu_position": 9,
+    "supports": ["title"],
+    "taxonomies": ["category","department"]
   },
   "Voucher": {
     "menu_icon": "dashicons-tickets-alt"

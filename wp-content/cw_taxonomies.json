@@ -1,1 +1,5 @@
-{}
+{
+  "department": {
+    "post_types": ["hotel","staff-member","questionnaire"]
+  }
+}
