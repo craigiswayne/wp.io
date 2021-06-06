@@ -4,3 +4,4 @@
 !bin/cleanup.sh
 !bin/php-lint.sh
 !wp-content/mu-plugins/PostType.php
+!my-config.php
