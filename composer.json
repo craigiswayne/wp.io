@@ -18,8 +18,8 @@
   "require": {
     "php": "^7.0",
     "composer/installers": "~1.0",
-    "craigiswayne/wp-shanela": "0.0.6",
-    "johnpbloch/wordpress": "^5.5.1"
+    "craigiswayne/wp-shanela": "^0.0.8",
+    "johnpbloch/wordpress": "^5.7.2"
   },
   "extra": {
     "installer-paths": {
