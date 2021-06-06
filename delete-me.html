@@ -1,0 +1,6 @@
+<script>
+  function sendSomething(){
+    parent.postMessage("some message from a 3rd party iframe","https://local.playground.io");
+  }
+</script>
+<button onclick="sendSomething()">Post message</button>

@@ -18,11 +18,3 @@ add_filter( "taxonomy_labels_department", function($labels){
 	
 	return $labels;
 }, 10, 1 );
-
-
-function edit_admin_menus() {
-	global $menu;
-	
-	$craig = 'smishmorshin';
-}
-add_action( 'admin_menu', 'edit_admin_menus' );

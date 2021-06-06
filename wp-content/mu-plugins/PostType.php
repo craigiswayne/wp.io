@@ -2,7 +2,8 @@
 namespace craigiswayne\wordpress;
 
 class MenuPosition {
-	public static $media_menu_position = 10;
+	public static $media = 10;
+	public static $settings = 80;
 }
 
 class PostTypeArgs {

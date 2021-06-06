@@ -35,7 +35,7 @@ add_filter('manage_edit-department_columns', function($columns){
 	$post_type = $_REQUEST['post_type'];
 	$post_type_obj = get_post_type_object($post_type);
 	
-	unset($columns['posts']);
+//	unset($columns['posts']);
 	$columns["linked_${post_type}_count"] = $post_type_obj->labels->name;
 
 	return $columns;
